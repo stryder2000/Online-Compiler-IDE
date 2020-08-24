@@ -1,0 +1,114 @@
+.container{
+    background: #ced1e5;
+    height: auto;
+    width: 640px; 
+    margin: 0px auto;
+    padding-bottom: 30px;
+}
+#Head{
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    text-align: center;
+    text-decoration : underline;
+}
+
+#language{
+    margin-left: 100px;
+}
+
+select{
+    font-size: 15px;
+}
+
+#editor{
+    position: absolute;
+    margin-left: 0px;
+    cursor: text;
+    float: left;
+    align-self: center;
+}
+
+#io{
+    display: table-row;
+}
+#io #stdin{
+    display: inline-block;
+    margin: 0px auto;
+}
+
+#stdout{
+    float: left;
+}
+
+label{
+    font-family:monospace;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 35px;
+    margin-left: 10px;
+}
+
+#editor__container{
+    display: block;
+    margin-left: 20px;
+    float: left;
+}
+
+#button__container{
+    display: table-row;
+}
+#output__contain{
+    margin-top: 5px;
+    border: 1px solid green;
+}
+
+.compile, .clear{
+    font-size: 22px;
+    font-weight: 50;
+    font-family:monospace;
+    color: white;
+    background-color: green;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+@media only screen and (min-width: 720px){
+    .container{
+        width: 750px;
+    }
+    #Head{
+        font-size: 38px;
+    }
+    label{
+        font-size: 22px;
+    }
+}
+
+@media only screen and (min-width: 1024px){
+    .container{
+        width: 1000px;
+    }
+    #Head{
+        font-size: 50px;
+    }
+}
+
+@media only screen and (min-width: 1440px){
+    .container{
+        width: 1220px;
+    }
+    #editor__container{
+        display: inline-block;
+        margin-left: 20px;
+        float: left;
+    }
+    #output__contain{
+        float: left;
+        display: table-cell;
+        margin-left: 20px;
+    }
+    #io{
+        float: left;
+    }
+}

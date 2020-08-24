@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Online Compiler IDE</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <script src="codemirror/lib/codemirror.js"></script>
+        <link href="codemirror/lib/codemirror.css" rel="stylesheet" />
+        <script src="codemirror/mode/clike/clike.js"></script>
+        <link href="codemirror/theme/darcula.css" rel="stylesheet" />
+        <link href="codemirror/theme/idea.css" rel="stylesheet" />
+        <link href="codemirror/theme/3024-day.css" rel="stylesheet" />
+        <script src="codemirror/addon/edit/matchbrackets.js"></script>
+        <script src="codemirror/addon/edit/closebrackets.js"></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+            rel="stylesheet"
+        />
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1 id="Head">Online Compiler IDE</h1>
+            <div id="language">
+                <label for="Lang">Select a Language: </label>
+                <select id="Lang">
+                    <option value="54">C++ (GCC 9.2.0)</option>
+                    <option value="71">Python (3.8.1)</option>
+                </select>
+            </div>
+            <hr>
+            <div id="editor__container">
+                <label for="editor">Type Code here: </label>
+                <textarea id="editor"></textarea>
+            </div>
+            <div id="io">
+                <label for="stdin">Input: </label>
+                <textarea id="stdin"></textarea>
+                <label for="editor">Output: </label>
+                <textarea id="stdout"></textarea>
+            </div>
+            <div id="button__container">
+                <div id="output__contain">
+                    <textarea id="output"></textarea>
+                </div>
+                <button class="compile">Compile</button>
+                <button class="clear">Clear</button>
+            </div>    
+        </div>
+        <script>
+            var editor = CodeMirror.fromTextArea(
+                document.getElementById("editor"),
+                {
+                    mode: "text/x-csrc",
+                    lineNumbers: true,
+                    theme: "darcula",
+                    matchBrackets: true,
+                    styleActiveLine: true,
+                    closeBrackets: true
+                }
+            );
+            editor.setSize("600", "450");
+
+            var stdin = CodeMirror.fromTextArea(
+                document.getElementById("stdin"),
+                {
+                    mode: "text",
+                    theme: "idea"
+                }
+            );
+            stdin.setSize("300", "208");
+
+            var stdout = CodeMirror.fromTextArea(
+                document.getElementById("stdout"),
+                {
+                    mode: "text",
+                    theme: "idea",
+                    readOnly: true
+                }
+            );
+            stdout.setSize("300", "208");
+
+            var output = CodeMirror.fromTextArea(
+                document.getElementById("output"),
+                {
+                    mode: "text",
+                    theme: "3024-day",
+                    readOnly: true
+                }
+            );
+            output.setSize("600","50");
+
+            const compile = document.querySelector('.compile');
+            const clear = document.querySelector('.clear');
+        </script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
